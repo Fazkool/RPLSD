@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2014 at 11:46 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.11
+-- Generation Time: Nov 05, 2014 at 09:11 AM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_kuliner`
 --
+CREATE DATABASE IF NOT EXISTS `db_kuliner` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `db_kuliner`;
 
 -- --------------------------------------------------------
 
@@ -51,7 +53,22 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `promo` varchar(100) DEFAULT NULL,
   `gambar` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `restaurant`
+--
+
+INSERT INTO `restaurant` (`id`, `nama`, `alamat`, `latitude`, `longitude`, `deskripsi`, `promo`, `gambar`) VALUES
+(1, 'KFC cabang cisitu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 2132322, 22142124124, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', '', 'img/restoran/kfc.png'),
+(2, 'Domino''s pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', NULL, 'img/restoran/domino''s pizza.png'),
+(3, 'Domino''s pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', NULL, 'img/restoran/domino''s pizza.png'),
+(4, 'Domino''s pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', NULL, 'img/restoran/domino''s pizza.png'),
+(5, 'Domino''s pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', NULL, 'img/restoran/domino''s pizza.png'),
+(6, 'Domino''s pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', NULL, 'img/restoran/domino''s pizza.png'),
+(7, 'Domino''s pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', NULL, 'img/restoran/domino''s pizza.png'),
+(8, 'KFC cabang cisitu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 2132322, 22142124124, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', '', 'img/restoran/kfc.png'),
+(9, 'KFC cabang cisitu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodale', 2132322, 22142124124, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex risus, ullamcorper nec semper sodales, placerat eget nibh. Fusce volutpat, magna vel gravida por', '', 'img/restoran/kfc.png');
 
 -- --------------------------------------------------------
 
@@ -71,7 +88,8 @@ CREATE TABLE IF NOT EXISTS `testimon` (
 --
 
 INSERT INTO `testimon` (`resto_id`, `testi`, `rate`) VALUES
-(1, 'ampas lu', 4);
+(1, 'ampas lu', 4),
+(1, 'ih waw', 10);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
