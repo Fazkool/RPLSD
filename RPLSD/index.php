@@ -164,7 +164,11 @@
 									}
 									?>
 									<div><?php echo $rate; ?>/10</div>
-									<div><a href="testimoni.php?id=<?php echo $row['id'] ?>" class='btn btn-success'>Rate now!</a> <a href="see_testimony.php?id=<?php echo $row['id'] ?>" class='btn btn-primary'>See testimony</a></div>
+									<div>
+										<a href="kirim.php" class='btn btn-warning'>Pesan!</a>
+										<a href="testimoni.php?id=<?php echo $row['id'] ?>" class='btn btn-success'>Rate now!</a>
+										<a href="see_testimony.php?id=<?php echo $row['id'] ?>" class='btn btn-primary'>See details!</a>
+									</div>
 									<div></div>
 							</td>
 							</tr>

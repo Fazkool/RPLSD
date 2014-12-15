@@ -33,7 +33,7 @@
 					}
 				?>
 				<div>Rating : <?php echo $rate; ?>/10</div>
-				<div><a href="index.php?id=<?php echo $row['id'] ?>">Rate now!</a> <a href="see_testimony.php?id=<?php echo $row['id'] ?>">See testimony</a></div>
+				<div><a href="testimoni.php?id=<?php echo $row['id'] ?>">Rate now!</a> <a href="see_testimony.php?id=<?php echo $row['id'] ?>">See testimony</a></div>
 				<div></div>
  			</td>
 		</tr>
