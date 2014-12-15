@@ -16,7 +16,7 @@
 		?>
 
 		<img src="<?php echo $resto['gambar'] ?>" height="200" width = "200">
-		<img src="https://maps.googleapis.com/maps/api/staticmap?center=<?php echo $latitude ?>,<?php echo $longitude ?>&zoom=16&size=200x200">
+		<img src="https://maps.googleapis.com/maps/api/staticmap?center=<?php echo $latitude ?>,<?php echo $longitude ?>&zoom=16&size=200x200&markers=color:red|label:A|<?php echo $latitude ?>,<?php echo $longitude ?>">
 		<div><?php echo $resto['nama'] ?></div>
 		<?php
 			$i = 1;
