@@ -31,10 +31,10 @@
 		include "connect.php"; 
 		$result = mysql_query("SELECT * FROM restaurant");
 	?>
-  <body class='contrast-red '>
+  <body class='contrast-red fixed-header fixed-navigation '>
     <header>
-      <nav class='navbar navbar-default'>
-        <a class='navbar-brand' href='index.html'>
+      <nav class='navbar navbar-default navbar-fixed-top'>
+        <a class='navbar-brand' href='index.html' style="margin-top: 10px;">
           <img width="81" height="21" class="logo" alt="Flatty" src="assets/images/logo.svg" />
           <img width="21" height="21" class="logo-xs" alt="Flatty" src="assets/images/logo_xs.svg" />
         </a>
@@ -52,7 +52,7 @@
     </header>
     <div id='wrapper'>
       <div id='main-nav-bg'></div>
-      <nav id='main-nav'>
+      <nav class='main-nav-fixed' id='main-nav'>
         <div class='navigation'>
           <div class='search'>
             <form action='search_results.html' method='get'>
@@ -149,8 +149,10 @@
 								</td>
 								<td style='white-space:initial;'>
 									<div><?php echo $row['nama'] ?></div>
-									<div><?php echo $row['deskripsi'] ?></div>
-									<div><?php echo $row['alamat'] ?></div>
+									<br>
+									<div><b>Deskripsi : </b><?php echo $row['deskripsi'] ?></div>
+									<br>
+									<div><b>Alamat : </b><?php echo $row['alamat'] ?></div>
 									<?php if(isset($promo['row'])) {?><div>Promo : <?php echo $row['promo'] ?></div> <?php } ?>
 
 									<?php
