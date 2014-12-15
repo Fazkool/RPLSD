@@ -29,7 +29,7 @@
   </head>
   <?php 
 		include "connect.php"; 
-		$result = mysql_query("SELECT * FROM restaurant");
+		$result = mysql_query("SELECT * FROM restaurant,menu where menu.resto_id=restaurant.id and menu.resto_id=".$_GET['id']);
 	?>
   <body class='contrast-red fixed-header fixed-navigation '>
     <header>
@@ -107,12 +107,13 @@
                     </div>
                   </div>
                 </div>
+
               </div>
               <div class='row'>
                 <div class='col-sm-12'>
                   <div class='box bordered-box blue-border' style='margin-bottom:0;'>
                     <div class='box-header red-background'>
-                      <div class='title'>TRENDING RESTAURANT</div>
+                      <div class='title'>MENU <?php echo $_GET['nama']?></div>
                       <div class='actions'>
                         <a class="btn box-remove btn-xs btn-link" href="#"><i class='icon-remove'></i>
                         </a>
@@ -152,7 +153,7 @@
 									<br>
 									<div><b>Deskripsi : </b><?php echo $row['deskripsi'] ?></div>
 									<br>
-									<div><b>Alamat : </b><?php echo $row['alamat'] ?></div>
+									<div><b>Harga : </b>Rp <?php echo $row['harga'] ?></div>
 									<?php if(isset($promo['row'])) {?><div>Promo : <?php echo $row['promo'] ?></div> <?php } ?>
 
 									<?php
@@ -165,11 +166,15 @@
 									$rate = 0;
 									}
 									?>
-									<div><?php echo $rate; ?>/10</div>
+									<div> <br></div>
 									<div>
-										<a href="menu.php?nama=<?php echo $row['nama']?>&id=<?php echo $row['id']?>" class='btn btn-warning'>Pesan!</a>
-										<a href="testimoni.php?id=<?php echo $row['id'] ?>" class='btn btn-success'>Rate now!</a>
-										<a href="see_testimony.php?id=<?php echo $row['id'] ?>" class='btn btn-primary'>See details!</a>
+                        <div class='col-md-2'>
+                          <input class='form-control' id='testi' name="testi" type='text' placeholder='Jumlah'>
+                        </div>
+										    <div class='col-md-5'>
+                          <input class='form-control' id='testi' name="testi" type='text' placeholder='Pesanan Kusus'>
+                        </div>
+										
 									</div>
 									<div></div>
 							</td>
@@ -184,6 +189,7 @@
 								?>
                             </tbody>
                           </table>
+
                         </div>
                       </div>
                     </div>
@@ -201,8 +207,7 @@
                   Copyright © 2013 Your Project Name
                 </div>
                 <div class='col-sm-6 buttons'>
-                  <a class="btn btn-link" href="http://www.bublinastudio.com/flatty">Preview</a>
-                  <a class="btn btn-link" href="https://wrapbootstrap.com/theme/flatty-flat-administration-template-WB0P6NR1N">Purchase</a>
+<a href="kirim.php" class='btn btn-success'>Purchase</a>
                 </div>
               </div>
             </div>
